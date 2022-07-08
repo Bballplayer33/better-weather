@@ -5,9 +5,17 @@ let weather = {
             "https://api.openweathermap.org/data/2.5/weather?q=" 
             + city 
             + "&units=imperial&appid=" 
-            + appKey
+            + this.apiKey
             )
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) => this.displayWeather(data));
     },
+    displayWeather: function(data) {
+        const {name} = data;
+        const {icon , describtion} = data.weather;
+        const {temp, humidity} = data.main;
+        const {speed} = data.wind;
+        console.log(name,icon,describtion,temp,humidity,speed);
+
+    }
 } 
