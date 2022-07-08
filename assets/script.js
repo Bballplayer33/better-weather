@@ -12,7 +12,7 @@ let weather = {
     },
     displayWeather: function(data) {
         const {name} = data;
-        const {icon , describtion} = data.weather;
+        const {icon , describtion} = data.weather[0];
         const {temp, humidity} = data.main;
         const {speed} = data.wind;
         console.log(name,icon,describtion,temp,humidity,speed);
