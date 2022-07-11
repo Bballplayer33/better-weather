@@ -16,6 +16,13 @@ let weather = {
         const {temp, humidity} = data.main;
         const {speed} = data.wind;
         console.log(name,icon,describtion,temp,humidity,speed);
+        document.querySelector(".city").innerHTML = "Weather in " + name;
+        document.querySelector(".icon").src = 
+        "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".describtion").innerHTML = describtion;
+        document.querySelector(".temp").innerHTML = temp + "°F";
+        document.querySelector(".humidity").innerHTML = "Humidity: " + humidity + "%";
+        document.querySelector(".wind").innerHTML = "Wind speed: " + speed + "mp/h";
 
     }
 } 
